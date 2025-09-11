@@ -32,6 +32,11 @@ Additional packages are automatically loaded as dependencies (Matrix, GLMMadapti
 
 ## References
 
-van Houwelingen, H. C. (2007). Dynamic prediction by landmarking in event history analysis. Scandinavian Journal of Statistics, 34(1), 70–85. https://doi.org/10.1111/j.1467-9469.2006.00529.x
-Rizopoulos, D., Miranda Afonso, P., & Papageorgiou, G. (2025). JMbayes2: Extended Joint Models for Longitudinal and Time-to-Event Data. R Package  Version 0.5-2. https://cran.r-project.org/package=JMbayes2
 Ferrer, L., Putter, H., & Proust-Lima, C. (2019). Individual dynamic predictions using landmarking and joint modelling: Validation of estimators and robustness assessment. Statistical Methods in Medical Research, 28(12), 3649–3666. https://doi.org/10.1177/0962280218811837
+
+Rizopoulos, D., Miranda Afonso, P., & Papageorgiou, G. (2025). JMbayes2: Extended Joint Models for Longitudinal and Time-to-Event Data. R Package  Version 0.5-2. https://cran.r-project.org/package=JMbayes2
+
+van Houwelingen, H. C. (2007). Dynamic prediction by landmarking in event history analysis. Scandinavian Journal of Statistics, 34(1), 70–85. https://doi.org/10.1111/j.1467-9469.2006.00529.x
+
+
+
