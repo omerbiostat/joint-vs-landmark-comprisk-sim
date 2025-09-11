@@ -25,7 +25,7 @@ true_params <- list(
                                                c("(Intercept)","year"))),
   truegamma = c(transplanted = 0.1553865,
                 dead         = 0.2506399),
-  alpha = 0.05 # longitudinal–survival association coefficient (0.05, 0.3, 0.5)
+  alpha = 0.05 # longitudinal_survival association coefficient (0.05, 0.3, 0.5)
 )
 
 library(splines)
