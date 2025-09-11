@@ -1,17 +1,13 @@
 ## ---- run_sim.R ----
+
 pkgs <- c("survival","JMbayes2","nlme","lme4","riskRegression","prodlim","MASS","dplyr","splines","timeROC","haven")
 need <- setdiff(pkgs, rownames(installed.packages()))
 if(length(need)) install.packages(need, repos="https://cloud.r-project.org")
 invisible(lapply(pkgs, library, character.only=TRUE))
 
-source("survfitLMCR.R")
-
 if (!dir.exists("results")) dir.create("results", recursive = TRUE)
 
-rm(list = ls()) # .rs.restartR()
-
-Sys.setlocale(category = "LC_ALL", locale = "pt_PT.UTF-8")
-
+# Sys.setlocale(category = "LC_ALL", locale = "pt_PT.UTF-8")
 
 # 1) Define the true parameters
 true_params <- list(
@@ -27,7 +23,7 @@ true_params <- list(
                 dead         = 0.2506399),
   alpha = 0.05 # longitudinal_survival association coefficient (0.05, 0.3, 0.5)
 )
-
+# sessionInfo()
 library(splines)
 
 # spline-based baseline hazard parameters
@@ -201,7 +197,7 @@ simulate_once <- function(n, true_params, times_empirical, CensorTime, s = 2.5, 
   }
   
   # TWO-STAGE LANDMARK APPROACH
-  getwd()
+  
   source("survfitLMCR.R")
   
   survfitLMCR <- function(tLM, thor, simulate = T, M = 1000, CI.levels = c(0.025, 0.975)) {
