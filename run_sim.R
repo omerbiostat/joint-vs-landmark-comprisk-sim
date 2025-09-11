@@ -132,7 +132,7 @@ simulate_joint_data_exact <- function(n, params, times_empirical, CensorTime, al
 }
 
 # 2b) Monte-carlo simulation
-simulate_once <- function(n, true_params, times_empirical, CensorTime, s = 5.5, horizon = 6, Mboot = 10){ 
+simulate_once <- function(n, true_params, times_empirical, CensorTime, s = 2.5, horizon = 2, Mboot = 10){ 
   # s landmark time: (2.5, 5.5), horizon:(2, 4, 6)
   
   params <- true_params
@@ -455,7 +455,7 @@ set.seed(2025)
 for(m in seq_len(M)){
   cat("Simulation:", m, "/", M, "\n")
   res_m <- try(simulate_once(n, params, times_empirical, CensorTime,
-                             s = 5.5, horizon = 6, Mboot = 10),  # s landmark time: (2.5, 5.5), horizon:(2, 4, 6)
+                             s = 2.5, horizon = 2, Mboot = 10),  # s landmark time: (2.5, 5.5), horizon:(2, 4, 6)
                silent = TRUE)
   
   if(inherits(res_m, "try-error")){
@@ -470,7 +470,9 @@ results
 # Monte Carlo summary table (meaningful when M > 1)
 col_means <- colMeans(results, na.rm = TRUE)
 col_sds   <- apply(results, 2, sd, na.rm = TRUE)
-col_ses   <- col_sds / sqrt(nrow(results))
+
+n_eff <- sum(complete.cases(results))
+col_ses <- col_sds / sqrt(n_eff)
 
 summary_tab <- data.frame(
   metric = colnames(results),
@@ -482,5 +484,7 @@ summary_tab <- data.frame(
 print(summary_tab, digits = 4)
 
 # Optional: Save as CSV
-# write.csv(summary_tab, "mc_summary_metrics.csv", row.names = FALSE)
-
+if (!dir.exists("results")) dir.create("results", recursive = TRUE)
+out_path <- file.path("results", "mc_summary_metrics.csv")
+write.csv(summary_tab, out_path, row.names = FALSE)
+cat("\nSaved to:", normalizePath(out_path), "\n")
