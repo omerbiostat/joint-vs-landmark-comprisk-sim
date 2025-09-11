@@ -1,8 +1,3 @@
-
----
-
-## CITATION.cff (şablon)
-```yaml
 cff-version: 1.2.0
 title: "Joint Modeling vs. Landmarking: A Simulation Study of Performance in Dynamic Prediction under Competing Risks"
 message: "If you use this code, please cite as below."
@@ -11,7 +6,6 @@ authors:
   - family-names: Dadas
     given-names: Omer Faruk
     affiliation: Ege University
-identifiers: []
 repository-code: https://github.com/omerbiostat/joint-vs-landmark-comprisk-sim
 license: MIT
 version: 0.1.0
