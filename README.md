@@ -1,4 +1,4 @@
-# Joint vs. Landmark – Competing Risks Simulation
+# Joint Modeling vs. Landmarking: A Simulation Study of Performance in Dynamic Prediction under Competing Risks
 
 ## Contents
 - **run_sim.R** – Main simulation script (compares Joint Modeling and Landmarking).
