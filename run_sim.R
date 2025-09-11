@@ -1,5 +1,4 @@
 ## ---- run_sim.R ----
-# Gerekli paketler
 pkgs <- c("survival","JMbayes2","nlme","lme4","riskRegression","prodlim","MASS","dplyr","splines","timeROC","haven")
 need <- setdiff(pkgs, rownames(installed.packages()))
 if(length(need)) install.packages(need, repos="https://cloud.r-project.org")
