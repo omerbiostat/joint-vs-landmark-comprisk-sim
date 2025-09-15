@@ -16,8 +16,8 @@
 results/mc_summary_metrics.csv
 
 ## Requirements
-### R version: 4.4.1 (tested under Windows 11 x64)
-### Key R packages (tested versions):
+### R version: 4.4.1
+### Key R packages:
  - JMbayes2 0.5-2
  - nlme 3.1-168
  - lme4 1.1-37
